@@ -1,0 +1,157 @@
+<!Doctype HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scal=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Technical Documentation</title>
+  </head>
+<body>
+  <nav id="navbar">
+    <header>The OSI Model: An Overview</header>
+<ul><li><a class="nav-link" href="#What_is_the_OSI_Model?">What is the OSI Model?</a></li>
+<li><a class="nav-link" href="#Physical_Layer">Physical Layer</a></li>
+<li><a class="nav-link" href="#Data_Link_Layer">Data Link Layer</a></li>
+<li><a class="nav-link" href="#Network_Layer">Network Layer</a></li>
+<li><a class="nav-link" href="#Transport_Layer">Transport Layer</a></li>
+<li><a class="nav-link" href="#Session_Layer">Session Layer</a></li>
+<li><a class="nav-link" href="#Presentation_Layer">Presentation Layer</a></li>
+<li><a class="nav-link" href="#Application_Layer">Application Layer</a></li></ul></nav>
+<main id="main-doc">
+<section class="main-section" id="What_is_the_OSI_Model?">
+<header>What is the OSI Model?</header><p>The OSI Model, or Open Systems Interconnection Model, is a conceptual framework that standardizes the functions of a telecommunication or computing system into seven abstraction layers. Each layer serves a specific purpose in facilitating communication between devices in a network.</p><p>Understanding the OSI Model is crucial for network professionals as it provides a common language for discussing and designing network architectures. The model aids in troubleshooting, protocol development, and the conceptualization of network interactions.</p></section>
+<section class="main-section" id="Physical_Layer">
+<header>Physical Layer</header>
+<h2>Functions:</h2><p>The Physical Layer deals with the transmission and reception of raw bit streams over a physical medium. It defines the hardware characteristics, such as cables, connectors, and signaling, necessary for transmitting binary data.
+<h2>Devices:</h2><p>Devices operating at this layer include hubs, repeaters, and network adapters. They focus on the electrical and mechanical aspects of data transmission.</p>
+<h2>Protocals:</h2><p>Protocols like Ethernet and RS-232C operate at the Physical Layer. Ethernet, for example, determines how bits are placed on the network medium.</p><h2>Examples:</h2><ul><li>Transmitting voltages over copper wires</li><li>Specifying cable types (e.g., Cat5e, Fiber Optic)</li><li>Defining connector types (e.g., RJ45)</li></ul>
+<pre><code data-line-number="1"># Example: Sending bits over a physical medium (simulation)
+def send_bits(data):
+    for bit in data:
+        send_bit_over_medium(bit)
+
+def send_bit_over_medium(bit):
+    # Code to send a bit over the physical medium
+    print(f"Sending bit: {bit}")
+
+# Example usage
+data_to_send = "10101011"
+send_bits(data_to_send).</code></pre>
+</section>
+<section class="main-section" id="Data_Link_Layer">
+<header>Data Link Layer</header>
+<h2>Functions:</h2><p>The Data Link Layer provides error detection and correction within the physical layer's raw bit stream. It is responsible for creating a reliable link between two directly connected nodes and managing access to the shared medium.</p>
+<h2>Devices:</h2><p>Common devices at this layer are switches and bridges. They operate based on MAC addresses and use protocols like Ethernet to ensure data integrity and efficient communication within a local network.</p>
+<h2>Protocals:</h2><p>Protocols like ARP (Address Resolution Protocol) and PPP (Point-to-Point Protocol) operate at the Data Link Layer. ARP resolves IP addresses to MAC addresses, while PPP facilitates point-to-point communication.</p><h2>Examples:</h2><ul><li>MAC address assignment</li><li>Frame synchronization</li><li>Error detection and correction</li></ul>
+<pre><code data-line-number="1"># Example: Simulating MAC address resolution with ARP
+def resolve_mac_address(ip_address):
+    # Code to perform ARP and resolve MAC address
+    mac_address = lookup_mac_address(ip_address)
+    return mac_address
+
+def lookup_mac_address(ip_address):
+    # Code to look up MAC address in ARP table or request it
+    return "00:1a:2b:3c:4d:5e"
+
+# Example usage
+ip_to_resolve = "192.168.1.1"
+resolved_mac = resolve_mac_address(ip_to_resolve)
+print(f"MAC address for {ip_to_resolve}: {resolved_mac}")
+</code></pre>
+    </section>
+    <section class="main-section" id="Network_Layer">
+      <header>Network Layer</header>
+   <h2>Functions:</h2><p>The Network Layer focuses on routing and forwarding data between different networks. It determines the optimal path for data packets to reach their destination, considering logical addressing and routing protocols.</p><h2>Devices:</h2><p>Routers operate at the Network Layer, making decisions based on IP addresses. They connect multiple networks and enable communication across diverse environments.</p>
+<h2>Protocals:</h2><p>IP (Internet Protocol) and ICMP (Internet Control Message Protocol) are key protocols at the Network Layer. IP handles addressing and routing, while ICMP manages error reporting.</p>
+<h2>Examples:</h2><ul><li>IP address assignment
+</li><li>Packet forwarding and routing
+</li><li>Subnetting and CIDR notation</li></ul>
+<pre><code data-line-number="1"># Example: Simulating IP packet forwarding with a router
+def forward_ip_packet(packet, destination_ip):
+    # Code to determine the next hop and forward the IP packet
+    next_hop = determine_next_hop(destination_ip)
+    send_packet_to_next_hop(packet, next_hop)
+
+def determine_next_hop(destination_ip):
+    # Code to perform routing table lookup and determine the next hop
+    next_hop = lookup_routing_table(destination_ip)
+    return next_hop
+
+def send_packet_to_next_hop(packet, next_hop):
+    # Code to send the IP packet to the next hop
+    print(f"Forwarding packet to {next_hop}: {packet}")
+
+# Example usage
+ip_packet_to_forward = "IP_PACKET_DATA"
+destination_ip_address = "203.0.113.1"
+forward_ip_packet(ip_packet_to_forward, destination_ip_address)
+</code></pre>
+</section>
+     <section class="main-section" id="Transport_Layer">
+      <header>Transport Layer</header>
+      <h2>Functions:</h2><p>The Transport Layer ensures end-to-end communication by providing error recovery, flow control, and reordering of data segments. It segments and reassembles data, providing reliability to the communication process.</p><h2>Devices:</h2><p>some of the devices used in the transport layer include a gateway and a firewall. A gateway is a component in computer networking that connects two networks that use separate protocols. The gateway is a protocol converter that converts one protocol to another. A router is a subset of a gateway.
+A firewall is a system that is meant to prevent unauthorized access to or from a private network. Some of the functions of a firewall include packet filtering and acting as a proxy server.</p>
+<h2>Protocals:</h2><p>Key protocols at this layer include TCP (Transmission Control Protocol) and UDP (User Datagram Protocol), each with distinct characteristics suitable for specific applications.</p>
+<h2>Examples:</h2><ul><li>Segmentation and reassembly of data</li><li>Flow control and error recovery</li><li>Multiplexing and demultiplexing</li></ul>
+<pre><code data-line-number="1"># Example: Simulating reliable data transfer with TCP
+def send_data_using_tcp(data):
+    # Code to establish a TCP connection, send data, and close the connection
+    establish_tcp_connection()
+    send_tcp_data(data)
+    close_tcp_connection()
+
+def establish_tcp_connection():
+    # Code to perform TCP handshake and establish a connection
+    print("TCP Connection Established")
+
+def send_tcp_data(data):
+    # Code to send data using TCP
+    print(f"Sending data over TCP: {data}")
+
+def close_tcp_connection():
+    # Code to close the TCP connection
+    print("TCP Connection Closed")
+
+# Example usage
+data_to_send_using_tcp = "Hello, TCP!"
+send_data_using_tcp(data_to_send_using_tcp)
+</code></pre>
+</section>
+<section class="main-section" id="Session_Layer">
+<header>Session Layer</header>
+<h2>Functions:</h2><p>The Session Layer establishes, maintains, and terminates communication sessions between applications. It manages dialog control, ensuring proper synchronization and error recovery during data exchange.</p>
+<h2>Features:</h2><p>Key features include session establishment, data synchronization, and session termination. This layer is essential for applications that require continuous and organized communication.</p>
+<h2>Examples:</h2><ul><li>Dialog control and synchronization</li><li>Session establishment and termination</li><li>Session checkpointing and recovery
+</li></ul>
+<pre><code data-line-number="1"># Example: Simulating session establishment and data synchronization
+def establish_session():
+    # Code to establish a session and synchronize data
+    print("Session Established and Synchronized")
+
+def send_data_over_session(data):
+    # Code to send data within an established session
+    print(f"Sending data over session: {data}")
+
+def terminate_session():
+    # Code to terminate the session
+    print("Session Terminated")
+
+# Example usage
+establish_session()
+data_to_send_over_session = "Session Data"
+send_data_over_session(data_to_send_over_session)
+terminate_session()
+</code></pre>
+</section>
+<section class="main-section" id="Presentation_Layer">
+<header>Presentation Layer</header>
+<h2>Functions:</h2><p>The Presentation Layer translates data between the application layer and the lower layers. It deals with data format translation, encryption, and compression, ensuring compatibility between different systems.</p><h2>Features:</h2><p>Common features include data encryption, data compression, and character set conversions. This layer enhances the efficiency and security of data exchange between heterogeneous systems.</p><h2>Examples:</h2><ul><li>Data encryption and decryption</li><li>Data compression and decompression</li><li>Format translation and character set conversion</li></section>
+<section class="main-section" id="Application_Layer">
+<header>Application Layer</header>
+<h2>Functions:</h2><p>The Application Layer provides a user interface and network services for applications. It enables communication between software applications and the network, facilitating end-user interactions.</p>
+<h2>Protocals:</h2><p>Protocols operating at this layer include HTTP (Hypertext Transfer Protocol), FTP (File Transfer Protocol), and SMTP (Simple Mail Transfer Protocol), supporting a wide range of applications.</p>
+<h2>Examples:</h2><ul><li>Web browsing (HTTP)</li><li>File transfer (FTP)</li><li>Email communication (SMTP)
+</li></ul>
+</section>
+</main>
+</body>
