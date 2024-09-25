@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scal=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Technical Documentation</title>
   </head>
@@ -19,24 +19,49 @@
 <li><a class="nav-link" href="#Application_Layer">Application Layer</a></li></ul></nav>
 <main id="main-doc">
 <section class="main-section" id="What_is_the_OSI_Model?">
-<header>What is the OSI Model?</header><p>The OSI Model, or Open Systems Interconnection Model, is a conceptual framework that standardizes the functions of a telecommunication or computing system into seven abstraction layers. Each layer serves a specific purpose in facilitating communication between devices in a network.</p><p>Understanding the OSI Model is crucial for network professionals as it provides a common language for discussing and designing network architectures. The model aids in troubleshooting, protocol development, and the conceptualization of network interactions.</p></section>
+<header>What is the OSI Model?</header><p>The OSI (Open Systems Interconnection) Model is a framework used to understand how different technologies and devices communicate within a network. It breaks down the complex process of networking into seven distinct layers, each with its own role and function. By organizing communication into layers, the OSI Model standardizes how devices interact with one another, making networks easier to understand, troubleshoot, and develop.</p></section>
+<header>Why is the OSI Model Important?</header>
+<ul>
+    <li><b>Standardization:</b>The OSI Model provides a universal standard for networking, so professionals around the world can design and implement systems that work together, regardless of the hardware or software used.</li>
+    <li><b>Troubleshooting: </b>When network issues arise, the OSI Model helps pinpoint where the problem lies by isolating it to a specific layer (e.g., a hardware issue at the Physical Layer or a routing problem at the Network Layer).</li>
+    <li><b>Protocol Development:</b>The OSI Model also aids in the development of protocols, which are sets of rules for how devices communicate. Each layer in the model corresponds to a specific set of protocols (such as Ethernet at the Data Link Layer or TCP at the Transport Layer).</li>
+    <li><b>Conceptualization:</b>By splitting communication into layers, the model simplifies the process of understanding how networks function. This makes it easier for professionals and learners to visualize what happens when data is sent from one device to another.</li>
+</ul>
 <section class="main-section" id="Physical_Layer">
 <header>Physical Layer</header>
-<h2>Functions:</h2><p>The Physical Layer deals with the transmission and reception of raw bit streams over a physical medium. It defines the hardware characteristics, such as cables, connectors, and signaling, necessary for transmitting binary data.
-<h2>Devices:</h2><p>Devices operating at this layer include hubs, repeaters, and network adapters. They focus on the electrical and mechanical aspects of data transmission.</p>
-<h2>Protocals:</h2><p>Protocols like Ethernet and RS-232C operate at the Physical Layer. Ethernet, for example, determines how bits are placed on the network medium.</p><h2>Examples:</h2><ul><li>Transmitting voltages over copper wires</li><li>Specifying cable types (e.g., Cat5e, Fiber Optic)</li><li>Defining connector types (e.g., RJ45)</li></ul>
-<pre><code data-line-number="1"># Example: Sending bits over a physical medium (simulation)
-def send_bits(data):
-    for bit in data:
-        send_bit_over_medium(bit)
-
-def send_bit_over_medium(bit):
-    # Code to send a bit over the physical medium
-    print(f"Sending bit: {bit}")
-
-# Example usage
-data_to_send = "10101011"
-send_bits(data_to_send).</code></pre>
+<h2>Overview</h2><p>The Physical Layer is the first and lowest layer of the OSI (Open Systems Interconnection) model, which is a framework for understanding how different network protocols interact. The Physical Layer is all about the hardware and the transmission of raw data (binary 1s and 0s) over a physical medium, such as cables or radio waves. It sets the foundation for all other layers by ensuring that data can be transmitted between devices, regardless of the medium being used.</p>
+<h2>Key Functions:</h2><ul><li><b>Transmission of Raw Data:</b> The Physical Layer is responsible for converting digital data into physical signals (electrical, light, or radio signals) and transmitting them over the network. On the receiving end, it turns those signals back into readable binary data.</li>
+<li><b>Bit Synchronization:</b> It ensures that both the sender and receiver are synchronized, meaning they can recognize when a bit starts and ends. This synchronization is crucial for accurately transmitting data.</li>
+<li><b>Transmission Medium:</b> This layer defines what kind of medium (e.g., copper wire, fiber optic cable, or wireless) will be used to transmit the data, as well as the speed and length limits of these mediums.</li>
+<li><b>Data Encoding and Signaling:</b> The Physical Layer sets rules for how bits are represented as signals, whether through electrical voltage changes in copper cables, light pulses in fiber optics, or radio waves in wireless transmission.</li>
+<li><b>Data Rate Control:</b> It specifies how fast data can be transmitted over a particular medium, helping maintain a consistent flow of information.</li>
+</ul>
+<h2>Devices:</h2><p>The devices that operate at the Physical Layer deal with how data moves from one point to another:</p>
+<ul>
+    <li><b>Hubs:</b> These devices take incoming data and broadcast it to all devices connected to the network. They do not manage or route data intelligently.</li>
+    <li><b>Repeaters:</b> Used to amplify signals traveling over long distances, repeaters help prevent data loss or degradation.</li>
+    <li> <b>Modems:</b>These devices convert digital signals to analog signals (and vice versa) to transmit data over telephone lines.</li>
+    <li><b>Network Interface Cards (NICs):</b> NICs are installed in devices like computers and allow them to connect to a network, converting data into signals that can travel over a medium.</li>
+</ul>
+<h2>Protocols:</h2><p>Protocols at the Physical Layer define how data is physically transmitted and received:</p>
+<ul>
+    <li><b>Ethernet:</b> A widely used protocol that governs the physical connection of devices in local area networks (LANs). It sets rules for how devices share data over cables.</li>
+    <li><b>Wi-Fi (IEEE 802.11):</b> This protocol enables wireless data transmission using radio waves, offering a physical layer alternative to cables.</li>
+    <li><b>RS-232C:</b> An older protocol used for serial communication, often connecting computers to peripheral devices like printers or modems.</li>
+</ul>
+<h2>Examples of Physical Layer in Action:</h2>
+<ul><li><b>Transmitting Voltages Over Copper Wires:</b> Devices like computers send and receive data in the form of electrical signals (voltages) through copper cables.</li>
+    <li><b>Fiber Optic Communication:</b> Data is transmitted as light pulses through thin strands of glass or plastic, allowing for high-speed and long-distance communication.</li>
+    <li><b>Wireless Communication:</b> Devices transmit data using radio waves, such as in Wi-Fi networks or Bluetooth connections.</li>
+<li><b>Connector Types:</b> The Physical Layer also defines the connectors used in networking, such as RJ45 for Ethernet cables or LC connectors for fiber optics.</li>
+</ul>
+<h2>Common Cable Types:</h2>
+<ul>
+    <li><b>Cat5e/Cat6 Ethernet Cables:</b> Used in wired networks to transmit data up to 1 Gbps or more.</li>
+    <li><b>Fiber Optic Cables:</b> These cables use light to transmit data and can carry large amounts of information over long distances.</li>
+    <li><b>Coaxial Cables:</b>These cables are used in older networks and some broadband internet connections.</li>
+</ul>
+<img src="https://networkdrops.com/wp-content/uploads/2019/11/four-different-types-cabling-2019-708x1024.jpg"/>
 </section>
 <section class="main-section" id="Data_Link_Layer">
 <header>Data Link Layer</header>
